@@ -146,10 +146,12 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="top"
+            android:src="@mipmap/icon_plus"
             fab:backgroundTint="@color/colorPrimary"
             fab:elevation="0dp"
             fab:fab_colorNormal="@color/colorPrimary"
-            fab:fab_size="normal" />
+            fab:fab_size="normal"
+            />
     </FrameLayout>
 
 </FrameLayout>

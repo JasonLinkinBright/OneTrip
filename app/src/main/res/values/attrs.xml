@@ -13,4 +13,10 @@
         <attr name="fab_title" format="string"/>
         <attr name="fab_stroke_visible" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="CircleTickView">
+        <attr name="circleRadius" format="integer"/>
+        <attr name="circleViewColor" format="color"/>
+        <attr name="circleStrokeWidth" format="integer"/>
+    </declare-styleable>
 </resources>

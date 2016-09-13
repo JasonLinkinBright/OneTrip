@@ -51,7 +51,10 @@ public class AddFloatingActionButton extends FloatingActionButton {
         attr.recycle();
     }
 
-
+    @Override
+    public void setImageDrawable(Drawable drawable) {
+        super.setImageDrawable(drawable);
+    }
 
     /**
      * @return the current Color of plus icon.
@@ -67,7 +70,6 @@ public class AddFloatingActionButton extends FloatingActionButton {
     public void setPlusColor(int color) {
         if (mPlusColor != color) {
             mPlusColor = color;
-//            updateBackground();
         }
     }
 
