@@ -4,13 +4,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jason.trip.R;
+import com.jason.trip.custom.view.CircleMenuLayout;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private CircleMenuLayout mCircleMenuLayout;
+
+    private String[] mItemTexts = new String[]{"安全中心 ", "特色服务", "投资理财",
+            "转账汇款", "我的账户", "信用卡"};
+    private int[] mItemImgs = new int[]{R.drawable.selector_bottom_bar_explore,
+            R.drawable.selector_bottom_bar_explore, R.drawable.selector_bottom_bar_explore,
+            R.drawable.selector_bottom_bar_explore, R.drawable.selector_bottom_bar_explore,
+            R.drawable.selector_bottom_bar_explore};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.include_popup_layout);
+        mCircleMenuLayout = (CircleMenuLayout) findViewById(R.id.id_menulayout);
+        mCircleMenuLayout.setMenuItemIconsAndTexts(mItemImgs, mItemTexts);
+
     }
 
     @Override
