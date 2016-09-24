@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     private CircleMenuLayout mCircleMenuLayout;
 
-    private String[] mItemTexts = new String[]{"安全中心 ", "特色服务", "投资理财",
-            "转账汇款", "我的账户", "信用卡"};
+    private String[] mItemTexts = new String[]{"我的旅程", "导游请求", "导游服务",
+            "一起旅游", "咨询服务", "咨询请求"};
     private int[] mItemImgs = new int[]{R.drawable.selector_bottom_bar_explore,
             R.drawable.selector_bottom_bar_explore, R.drawable.selector_bottom_bar_explore,
             R.drawable.selector_bottom_bar_explore, R.drawable.selector_bottom_bar_explore,

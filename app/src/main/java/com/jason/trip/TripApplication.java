@@ -15,13 +15,12 @@ import com.orhanobut.logger.Logger;
  * Description:
  * Created by Jason on 16/9/5.
  */
-public class TripApplication extends Application{
+public class TripApplication extends Application {
     private static Context sContext;
 
     public static Context getContext() {
         return sContext;
     }
-
 
 
     @Override
@@ -30,7 +29,6 @@ public class TripApplication extends Application{
         sContext = this;
         Fresco.initialize(getApplicationContext());
         AndroidThreeTen.init(this);
-
 
 
         Logger

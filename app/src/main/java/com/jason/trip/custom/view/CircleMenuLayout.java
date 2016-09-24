@@ -438,14 +438,17 @@ public class CircleMenuLayout extends ViewGroup {
         for (int i = 0; i < mMenuItemCount; i++) {
             final int j = i;
             View view = mInflater.inflate(mMenuItemLayoutId, this, false);
-            ImageView iv = (ImageView) view
-                    .findViewById(R.id.id_circle_menu_item_image);
+            /**工程需要,将ImageView替换为CircleTextImageView*/
+//            ImageView iv = (ImageView) view
+//                    .findViewById(R.id.id_circle_menu_item_image);
+            CircleTextImageView iv = (CircleTextImageView) view.findViewById(R.id.id_circle_menu_item_image);
             TextView tv = (TextView) view
                     .findViewById(R.id.id_circle_menu_item_text);
 
             if (iv != null) {
                 iv.setVisibility(View.VISIBLE);
-                iv.setImageResource(mItemImgs[i]);
+//                iv.setImageResource(mItemImgs[i]);
+                iv.setText(mItemTexts[i]);
                 iv.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -457,7 +460,9 @@ public class CircleMenuLayout extends ViewGroup {
                 });
             }
             if (tv != null) {
-                tv.setVisibility(View.VISIBLE);
+                /**工程需要,设置为不可见*/
+//                tv.setVisibility(View.VISIBLE);
+                tv.setVisibility(INVISIBLE);
                 tv.setText(mItemTexts[i]);
             }
 

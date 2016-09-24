@@ -75,6 +75,7 @@ public class CircleTextImageView extends ImageView {
     private boolean mReady;
     private boolean mSetupPending;
     private boolean mBorderOverlay;
+    private boolean mSplitText = true;
 
     public CircleTextImageView(Context context) {
         super(context);
@@ -151,9 +152,18 @@ public class CircleTextImageView extends ImageView {
 
         if (!TextUtils.isEmpty(mTextString)) {
             Paint.FontMetricsInt fm = mTextPaint.getFontMetricsInt();
-            canvas.drawText(mTextString,
-                    getWidth() / 2 - mTextPaint.measureText(mTextString) / 2,
-                    getHeight() / 2 - fm.descent + (fm.bottom - fm.top) / 2, mTextPaint);
+
+            if (mSplitText) {
+                canvas.drawText(mTextString.substring(0, 2), getWidth() / 2 - mTextPaint.measureText(mTextString.substring(0, 2)) / 2,
+                        getHeight() / 2 -(fm.bottom - fm.top) / 4-fm.leading/2, mTextPaint);
+                canvas.drawText(mTextString.substring(2, mTextString.length()), getWidth() / 2 - mTextPaint.measureText(mTextString.substring(2, mTextString.length())) / 2,
+                        getHeight() / 2 + (fm.bottom - fm.top)*3/4+fm.leading/2, mTextPaint);
+            } else {
+                canvas.drawText(mTextString,
+                        getWidth() / 2 - mTextPaint.measureText(mTextString) / 2,
+                        getHeight() / 2 - fm.descent + (fm.bottom - fm.top) / 2, mTextPaint);
+            }
+
         }
     }
 
@@ -431,5 +441,10 @@ public class CircleTextImageView extends ImageView {
         }
 
     }
+
+    public void setmSplitText(boolean needSplit) {
+        this.mSplitText = needSplit;
+    }
+
 
 }
